@@ -11,7 +11,7 @@ on:
     paths:
       - "lichess-bot.py"
   schedule:
-    - cron: "1 */4 * * *"
+    - cron: "1 */5 * * *"
 
 concurrency:
   group: ${{ github.ref }}
@@ -36,7 +36,5 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo ${{ secrets.LICHESS_KEY }} > key.txt
-          chmod +x ./engines/fairy-stockfish-largeboard_x86-64  
-          chmod +x ./engines/stockfish-ubuntu-x86-64-sse41-popcnt
           chmod +x ./engines/stockfish
           python3 lichess-bot.py
