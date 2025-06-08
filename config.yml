@@ -67,7 +67,7 @@ engine:                            # Engine settings.
 
   lichess_bot_tbs:                 # The tablebases list here will be read by lichess-bot, not the engine.
     syzygy:
-      enabled: false               # Whether or not to use local syzygy endgame tablebases.
+      enabled: true               # Whether or not to use local syzygy endgame tablebases.
       paths:                       # Paths to Syzygy endgame tablebases.
         - "engines/syzygy"
       max_pieces: 7                # Maximum number of pieces in the endgame tablebase.
@@ -209,8 +209,9 @@ matchmaking:
   opponent_allow_tos_violation: false # Set to 'true' to allow challenging bots that violated the Lichess Terms of Service.
   challenge_mode: "rated"         # Set it to the mode in which challenges are sent. Possible options are 'casual', 'rated' and 'random'.
   challenge_filter: none           # If a bot declines a challenge, do not issue a similar challenge to that bot. Possible options are 'none', 'coarse', and 'fine'.
-  block_list:                      # The list of bots that will not be challenged
- 
+# block_list:                      # The list of bots that will not be challenged
+#   - user1
+#   - user2
 # overrides:                       # List of overrides for the matchmaking specifications above. When a challenge is created, either the default specification above or one of the overrides will be randomly chosen.
 #   bullet_only_horde:             # Name of the override. Can be anything as long as each override has a unique name ("bullet_only_horde" and "easy_chess960" in these examples).
 #     challenge_variant: "horde"   # List of options to override. Only the options mentioned will change when making the challenge. The rest will follow the default matchmaking options above.
