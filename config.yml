@@ -198,11 +198,11 @@ matchmaking:
     - 180
     - 600
   challenge_increment:             # Increment in seconds of the challenge (to be chosen at random).
-    - 1
+    - 0
 #  challenge_days:                 # Days for correspondence challenge (to be chosen at random).
 #    - 1
 #    - 2
-  opponent_min_rating: 3000         # Opponents rating should be above this value (600 is the minimum rating in lichess).
+  opponent_min_rating: 3000        # Opponents rating should be above this value (600 is the minimum rating in lichess).
   opponent_max_rating: 4000        # Opponents rating should be below this value (4000 is the maximum rating in lichess).
   opponent_rating_difference: 200  # The maximum difference in rating between the bot's rating and opponent's rating.
   rating_preference: "high"        # One of "none", "high", "low".
@@ -223,8 +223,8 @@ matchmaking:
 #
     easy_chess960:
       challenge_variant: "chess960"
-      opponent_min_rating: 400
-      opponent_max_rating: 1200
+      opponent_min_rating: 2000
+      opponent_max_rating: 4000
       opponent_rating_difference:
       challenge_mode: rated
 #
