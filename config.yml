@@ -10,11 +10,13 @@ engine:                            # Engine settings.
   ponder: true                     # Think on opponent's time.
 
   polyglot:
-    enabled: false                 # Activate polyglot book.
+    enabled: true                 # Activate polyglot book.
     book:
-      standard:                    # List of book file paths for variant standard.
-        - engines/book1.bin
-        - engines/book2.bin
+      standard:                 # List of book file paths for variant standard. 
+        - "./engines/OPTIMUS2502.bin"
+        - "./engines/optimus32.bin"
+        - "./engines/Titans.bin"
+        - "./engines/Perfect2023.bin"
 #     atomic:                      # List of book file paths for variant atomic.
 #       - engines/atomicbook1.bin
 #       - engines/atomicbook2.bin
@@ -67,7 +69,7 @@ engine:                            # Engine settings.
 
   lichess_bot_tbs:                 # The tablebases list here will be read by lichess-bot, not the engine.
     syzygy:
-      enabled: true               # Whether or not to use local syzygy endgame tablebases.
+      enabled: false               # Whether or not to use local syzygy endgame tablebases.
       paths:                       # Paths to Syzygy endgame tablebases.
         - "engines/syzygy"
       max_pieces: 7                # Maximum number of pieces in the endgame tablebase.
@@ -87,15 +89,15 @@ engine:                            # Engine settings.
 #   Hash: 256
 
   uci_options:                     # Arbitrary UCI options passed to the engine.
-    Move Overhead: 200            # Increase if your bot flags games too often.
-    Threads: 4                    # Max CPU threads the engine can use.
+    Move Overhead: 300            # Increase if your bot flags games too often.
+    Threads: 8                    # Max CPU threads the engine can use.
     Hash: 512                     # Max memory (in megabytes) the engine can allocate.
 #   SyzygyPath: "./syzygy/"       # Paths to Syzygy endgame tablebases that the engine reads.
     UCI_ShowWDL: true             # Show the chance of the engine winning.
-#   go_commands:                   # Additional options to pass to the UCI go command.
-#     nodes: 1                     # Search so many nodes only.
-#     depth: 5                     # Search depth ply only.
-#     movetime: 1000               # Integer. Search exactly movetime milliseconds.
+    go_commands:                   # Additional options to pass to the UCI go command.
+     nodes: 3000000000            # Search so many nodes only.
+     depth: 45                    # Search depth ply only.
+     movetime: 150                # Integer. Search exactly movetime milliseconds.
 
 # xboard_options:                  # Arbitrary XBoard options passed to the engine.
 #   cores: "4"
