@@ -69,7 +69,7 @@ engine:                            # Engine settings.
 
   lichess_bot_tbs:                 # The tablebases list here will be read by lichess-bot, not the engine.
     syzygy:
-      enabled: true                # Whether or not to use local syzygy endgame tablebases.
+      enabled: false               # Whether or not to use local syzygy endgame tablebases.
       paths:                       # Paths to Syzygy endgame tablebases.
         - "engines/syzygy"
       max_pieces: 5                # Maximum number of pieces in the endgame tablebase.
@@ -127,7 +127,7 @@ correspondence:
   ponder: false                    # Ponder in correspondence games the bot is connected to.
 
 challenge:                         # Incoming challenges.
-  concurrency: 5                   # Number of games to play simultaneously.
+  concurrency: 1                   # Number of games to play simultaneously.
   sort_by: "best"                  # Possible values: "best" and "first".
   accept_bot: true                 # Accepts challenges coming from other bots.
   only_bot: false                  # Accept challenges by bots only.
@@ -221,12 +221,12 @@ matchmaking:
 #       - 0
 #       - 1
 #
-    easy_chess960:
-      challenge_variant: "chess960"
-      opponent_min_rating: 2000
-      opponent_max_rating: 4000
-      opponent_rating_difference:
-      challenge_mode: rated
+#   easy_chess960:
+#     challenge_variant: "chess960"
+#     opponent_min_rating: 2000
+#     opponent_max_rating: 4000
+#     opponent_rating_difference:
+#     challenge_mode: rated
 #
 #   no_pressure_correspondence:
 #     challenge_initial_time:
