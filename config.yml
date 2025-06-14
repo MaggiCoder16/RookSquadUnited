@@ -151,14 +151,14 @@ challenge:                         # Incoming challenges.
     #- threeCheck
   time_controls:                   # Time controls to accept (bots are not allowed to play ultraBullet).
     - bullet
-  # - blitz
-  # - rapid
-  # - classical
-  # - correspondence
+    - blitz
+    - rapid
+    - classical
+    - correspondence
     #- unlimited
   modes:                           # Game modes to accept.
     - casual                       # Unrated games.
-#   - rated                        # Rated games - must comment if the engine doesn't try to win.
+    - rated                        # Rated games - must comment if the engine doesn't try to win.
   block_list:                      # List of users from which the challenges are always declined.
     #- YoBot_v2
     #- TheMatrix2025
@@ -178,10 +178,10 @@ greeting:
   #   {opponent} to insert opponent's name
   #   {me} to insert bot's name
   # Any other words in curly braces will be removed.
-  hello: "Get ready" # Message to send to opponent chat at the start of a game
+  hello: "Get ready, to LOSE!" # Message to send to opponent chat at the start of a game
   goodbye: "Good game!" # Message to send to opponent chat at the end of a game
-  hello_spectators: "Here ya' go!" # Message to send to spectator chat at the start of a game
-  goodbye_spectators: "Uh.. Anyways, thanks for watching!" # Message to send to spectator chat at the end of a game
+  hello_spectators: "Here we gooo!" # Message to send to spectator chat at the start of a game
+  goodbye_spectators: "Thanks for watching!" # Message to send to spectator chat at the end of a game
 
 # pgn_directory: "game_records"    # A directory where PGN-format records of the bot's games are kept
 # pgn_file_grouping: "game"        # How to group games into files. Options are "game", "opponent", and "all"
@@ -196,6 +196,8 @@ matchmaking:
   challenge_timeout: 1            # Create a challenge after being idle for 'challenge_timeout' minutes. The minimum is 1 minute.
   challenge_initial_time:          # Initial time in seconds of the challenge (to be chosen at random).
     - 30
+    - 60
+    -180
   challenge_increment:             # Increment in seconds of the challenge (to be chosen at random).
     - 0
 #  challenge_days:                 # Days for correspondence challenge (to be chosen at random).
