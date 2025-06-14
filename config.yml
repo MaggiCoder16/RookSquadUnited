@@ -89,14 +89,14 @@ engine:                            # Engine settings.
 #   Hash: 256
 
   uci_options:                     # Arbitrary UCI options passed to the engine.
-    Move Overhead: 300            # Increase if your bot flags games too often.
+    Move Overhead: 250            # Increase if your bot flags games too often.
     Threads: 8                    # Max CPU threads the engine can use.
     Hash: 512                     # Max memory (in megabytes) the engine can allocate.
 #   SyzygyPath: "./syzygy/"       # Paths to Syzygy endgame tablebases that the engine reads.
     UCI_ShowWDL: true             # Show the chance of the engine winning.
     go_commands:                   # Additional options to pass to the UCI go command.
      nodes: 3000000000            # Search so many nodes only.
-     depth: 45                    # Search depth ply only.
+     depth: 30                    # Search depth ply only.
      movetime: 150                # Integer. Search exactly movetime milliseconds.
 
 # xboard_options:                  # Arbitrary XBoard options passed to the engine.
