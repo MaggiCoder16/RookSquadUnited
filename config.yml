@@ -150,15 +150,15 @@ challenge:                         # Incoming challenges.
     #- racingKings
     #- threeCheck
   time_controls:                   # Time controls to accept (bots are not allowed to play ultraBullet).
-    - bullet
-    - blitz
-    - rapid
-    - classical
-    - correspondence
-    #- unlimited
+   - bullet
+#   - blitz
+#   - rapid
+#   - classical
+#   - correspondence
+#   - unlimited
   modes:                           # Game modes to accept.
     - casual                       # Unrated games.
-    - rated                        # Rated games - must comment if the engine doesn't try to win.
+    - rated                       # Rated games - must comment if the engine doesn't try to win.
   block_list:                      # List of users from which the challenges are always declined.
     #- YoBot_v2
     #- TheMatrix2025
@@ -196,8 +196,6 @@ matchmaking:
   challenge_timeout: 1            # Create a challenge after being idle for 'challenge_timeout' minutes. The minimum is 1 minute.
   challenge_initial_time:          # Initial time in seconds of the challenge (to be chosen at random).
     - 30
-    - 60
-    - 180
   challenge_increment:             # Increment in seconds of the challenge (to be chosen at random).
     - 0
 #  challenge_days:                 # Days for correspondence challenge (to be chosen at random).
@@ -205,7 +203,7 @@ matchmaking:
 #    - 2
   opponent_min_rating: 3000        # Opponents rating should be above this value (600 is the minimum rating in lichess).
   opponent_max_rating: 4000        # Opponents rating should be below this value (4000 is the maximum rating in lichess).
-  opponent_rating_difference: 200  # The maximum difference in rating between the bot's rating and opponent's rating.
+  opponent_rating_difference: 300  # The maximum difference in rating between the bot's rating and opponent's rating.
   rating_preference: "high"        # One of "none", "high", "low".
   opponent_allow_tos_violation: false # Set to 'true' to allow challenging bots that violated the Lichess Terms of Service.
   challenge_mode: "rated"         # Set it to the mode in which challenges are sent. Possible options are 'casual', 'rated' and 'random'.
