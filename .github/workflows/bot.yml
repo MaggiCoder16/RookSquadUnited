@@ -1,46 +1,38 @@
-# This is a basic workflow to help you get started with Actions
+name: Run Bot
 
-name: Run bot
-
-# Controls when the workflow will run
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - "main"
-    paths:
-      - "user_interface.py"
   schedule:
-    - cron: "1 */5 * * *"
-
-concurrency:
-  group: ${{ github.ref }}
-  cancel-in-progress: false
-
-permissions:
-  contents: write
+    - cron: '0 */5 * * *'
 
 jobs:
-  build:
+  run-bot:
     runs-on: ubuntu-latest
 
+    concurrency:
+      group: bot-restart
+      cancel-in-progress: false
+
+    env:
+      TOKEN: ${{ secrets.TOKEN }}
+
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-      - name: Python Dependency Installation
-        uses: py-actions/py-dependency-install@v4.0.0
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
 
-      - name: Injection For my Repo
-        run: sed -i "s/TokenTimeIsBackBuddyss/${{ secrets.LICHESS_KEY }}/g" config.yml
-
-      - name: Stockfish
+      - name: Install Requirements
         run: |
-          chmod +x ./engines/stockfish
+          pip install -r requirements.txt
 
-      - name: Alternate between normal and matchmaking
+      - name: Insert Token
         run: |
-            if (( $GITHUB_RUN_NUMBER % 2 == 1 )); then
-            python -u user_interface.py
-            else
-            python -u user_interface.py --upgrade
-            fi
+          sed -i "s/^token:.*/token: \"${TOKEN}\"/" config.yml
+
+
+      - name: Run Bot
+        run: python -u user_interface.py --matchmaking
